@@ -157,8 +157,10 @@ int main(int argc, char* argv[]) {
 
 			if (depthImage.get_width_pixels() == rgbImage.get_width_pixels() && depthImage.get_height_pixels() == rgbImage.get_height_pixels()) {
 				std::copy(depthImage.get_buffer(), depthImage.get_buffer() + depthImage.get_height_pixels() * depthImage.get_width_pixels() * (int)sizeof(uint16_t), transformed_depthImage.get_buffer());
+				cout<<"if"<<endl;
 			}
 			else {
+				cout<<"else"<<endl;
 				k4aTransformation.depth_image_to_color_camera(depthImage, &transformed_depthImage);
 			}
 			k4aTransformation.depth_image_to_point_cloud(transformed_depthImage, K4A_CALIBRATION_TYPE_COLOR, &point_cloud_image);

@@ -28,7 +28,7 @@ find_package(OpenCV REQUIRED)
 include_directories(${OPENCV_INCLUDE_DIRS})
 link_directories(${OPENCV_LIBRARY_DIRS})
 # Declare the executable target built from your sources
-add_executable(Acquiring AcquiringPointCloud.cpp)
+add_executable(AcquiringPointCloud AcquiringPointCloud.cpp)
 # Link your application with other libraries
 target_link_libraries(AcquiringPointCloud k4a::k4a ${OpenCV_LIBS} libboost_system.so libboost_filesystem.so
 ${VTK_LIBRARIES} ${PCL_LIBRARIES})
@@ -43,7 +43,7 @@ find_package(OpenCV REQUIRED)
 # Add includes
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 # Declare the executable target built from your sources
-add_executable(Acquiring AcquiringImages.cpp)
+add_executable(AcquiringImages AcquiringImages.cpp)
 # Link your application with other libraries
 target_link_libraries(AcquiringImages k4a::k4a ${OpenCV_LIBS} )
 

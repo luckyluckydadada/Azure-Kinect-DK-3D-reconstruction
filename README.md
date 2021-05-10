@@ -26,5 +26,5 @@ cd AcquiringPointCloud
 mkdir build
 cd build
 rm -rf *; cmake .. -GNinja; 
-rm -rf  rgb depth ir ply pcd; mkdir rgb depth ir ply pcd ;ninja
+rm -rf ply pcd; mkdir ply pcd ;ninja
 ./AcquiringPointCloud

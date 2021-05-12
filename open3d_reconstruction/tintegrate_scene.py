@@ -11,7 +11,7 @@ import time
 import open3d as o3d
 import argparse
 
-sys.path.append("../utility")
+
 from file import *
 sys.path.append(".")
 

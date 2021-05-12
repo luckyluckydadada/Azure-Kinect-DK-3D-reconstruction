@@ -12,7 +12,7 @@ import sys
 from os.path import isfile
 from initialize_config import initialize_config
 import open3d as o3d
-sys.path.append("../utility")
+
 from file import check_folder_structure
 sys.path.append(".")
 

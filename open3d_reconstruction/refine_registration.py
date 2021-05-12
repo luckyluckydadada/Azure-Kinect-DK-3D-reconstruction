@@ -7,7 +7,7 @@
 import numpy as np
 import open3d as o3d
 import sys
-sys.path.append("../utility")
+
 from file import join, get_file_list, write_poses_to_log
 from visualization import draw_registration_result_original_color
 sys.path.append(".")

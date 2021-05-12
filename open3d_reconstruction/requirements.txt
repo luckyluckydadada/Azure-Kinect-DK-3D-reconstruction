@@ -1,4 +1,4 @@
 opencv-python
 joblib
-open3d==0.10.0
+open3d==0.12.0
 numpy

@@ -1,5 +1,4 @@
 */build/
 .vscode
 __pycache__
-name.mkv
-name
+open3d_reconstruction/dataset/*

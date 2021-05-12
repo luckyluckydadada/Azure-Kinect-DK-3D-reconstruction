@@ -28,20 +28,19 @@ mkdir ply pcd
 
 ## open3d_reconstruction
 利用开源框架open3d的Reconstruction system实现Azure Kinect DK相机的三维重建。
-目前在Ubuntu18.04笔记本+DK相机上录制的数据，可以携带笔记本连着dk相机（充电宝供电给相机）进行室外采集。
-目前在win10台式机上进行重建，主要是因为我的笔记本配置较低，重建的时候比较卡。
+开发环境是在Ubuntu18.04笔记本+DK相机上进行，可以携带笔记本连着dk相机（充电宝供电给相机）进行室外采集，采集和重建使用的open3d版本不一样，最好用conda建立两个独立的环境。
+另外在win10上可以进行重建，但是利用win10+相机采集数据有些小问题，需要自行解决。
 后续会将在jetson+dk相机上进行，最好可以实时。
 请确保您完成了https://blog.csdn.net/weixin_41965898/article/details/116451026和https://blog.csdn.net/weixin_41965898/article/details/116596933 并通过测试，再继续下面的过程。
 
 ### 安装
-
 ```
 git clone https://github.com/luckyluckydadada/Azure-Kinect-DK-3D-reconstruction.git
 cd Azure-Kinect-DK-3D-reconstruction/open3d_reconstruction
-pip install -r requirements.txt
 ```
 ### 录制和提取数据
 ```
+pip install -r requirements-0.10.txt  # 此处安装 open3d版本为 0.10.0
 cd Azure-Kinect-DK-3D-reconstruction/open3d_reconstruction
 录制数据，空格开始录制，esc退出录制并保存：
 python sensors/azure_kinect_recorder.py --output dataset/name.mkv 
@@ -50,6 +49,7 @@ python sensors/azure_kinect_mkv_reader.py --input dataset/name.mkv --output data
 ```
 ### 进行重建
 ```
+pip install -r requirements.txt  # 此处安装 open3d版本为 0.12.0
 cd Azure-Kinect-DK-3D-reconstruction/open3d_reconstruction
 如果发生目录移动，请修改dataset/name/config.json 中的"path_dataset" 和 "path_intrinsic"的值:
 python run_system.py dataset/name/config.json --make --register --refine --integrate

@@ -1,2 +1,5 @@
 */build/
 .vscode
+__pycache__
+name.mkv
+name

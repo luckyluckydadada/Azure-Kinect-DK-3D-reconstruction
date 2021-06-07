@@ -1,0 +1,31 @@
+{    
+    // 1 插件安装python
+    // 2 菜单栏 -》 Debug -》 Open Configurations
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: run_systerm.py",
+            "type": "python",
+            "request": "launch",
+            "program": "run_system.py", // ${file} 表示当前文件
+            "console": "integratedTerminal",
+            "cwd": "open3d_reconstruction", //  指定调试的目录，${fileDirname}为文件所在目录，若注释此行则默认调试的目录为工程的根目录
+            "python": "C:\\ProgramData\\Anaconda3\\python.exe",  // conda环境
+            "args":[
+                "dataset\\office\\config.json",  // 参数不可以有空格，遇到空格则用“”新增一个参数
+                "--make"
+                ,"--register"
+                ,"--refine"
+                ,"--integrate"
+            ]
+        },
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]  
+}

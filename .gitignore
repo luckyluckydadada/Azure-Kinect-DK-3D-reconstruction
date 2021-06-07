@@ -1,4 +1,4 @@
 */build/
-.vscode
 __pycache__
 open3d_reconstruction/dataset/*
+open3d_reconstruction/arm/src
